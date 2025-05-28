@@ -23,14 +23,14 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
     # Inputs
-    ui[0]: "RESET"
-    ui[1]: "ENABLE"
-    ui[2]: "LOAD"
-    ui[3]: "CLOCK"
-    ui[4]: "PROGRAMMABLE_INPUT[0]"
-    ui[5]: "PROGRAMMABLE_INPUT[1]"
-    ui[6]: "PROGRAMMABLE_INPUT[2]"
-    ui[7]: "PROGRAMMABLE_INPUT[3]"
+    ui[0]: "ENABLE"
+    ui[1]: "LOAD"
+    ui[2]: "PROGRAMMABLE_INPUT[0]"
+    ui[3]: "PROGRAMMABLE_INPUT[1]"
+    ui[4]: "PROGRAMMABLE_INPUT[2]"
+    ui[5]: "PROGRAMMABLE_INPUT[3]"
+    ui[6]: "PROGRAMMABLE_INPUT[4]"
+    ui[7]: "PROGRAMMABLE_INPUT[5]"
 
     # Outputs
     uo[0]: "COUNT_OUT[0]"
