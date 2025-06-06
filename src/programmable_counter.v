@@ -17,18 +17,22 @@
 module tt_um_programmable_counter (
     input wire clk,
     input wire rst_n,
-    input wire [7:0] ui,
-    inout wire [7:0] uio, 
-    output reg [7:0] uo
+    input wire ena,
+
+    input wire [7:0] ui_in,
+    output wire [7:0] uo_out,
+    input wire [7:0] uio_in,
+    output wire [7:0] uio_out,
+    output wire [7:0] uio_oe
 );
     // Asynchronous reset
     always @(posedge clk or posedge rst_n) begin
         if (rst_n) begin
-            uo[7:0] <= 8'b0;
-        end else if (ui[1]) begin
-            uo[7:0] <= uio[7:0];
-        end else if (ui[0]) begin
-            uo[7:0] <= uo[7:0] + 1;
+            assign uo_out = 8'b0;
+        end else if (ui_in[1]) begin
+            assign uo_out = uio_in;
+        end else if (ui_in[0]) begin
+            assign uo_out = uo_out + 1;
         end
     end
 
