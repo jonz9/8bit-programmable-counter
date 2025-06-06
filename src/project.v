@@ -21,7 +21,7 @@ module tt_um_example (
   assign uio_out = 8'b0;
   assign uio_oe = 8'b0;
 
-  always @(posedge clk or posedge rst_n) begin
+  always @(posedge clk) begin
       if (!rst_n) begin
           count <= 8'b0;
       end else if (ui_in[1]) begin
