@@ -25,14 +25,18 @@ module tt_um_programmable_counter (
     output wire [7:0] uio_out,
     output wire [7:0] uio_oe
 );
+
+    reg [7:0] count;
+
+    assign uo_out = count;
     // Asynchronous reset
     always @(posedge clk or posedge rst_n) begin
         if (rst_n) begin
-            uo_out <= 8'b0;
+            count <= 8'b0;
         end else if (ui_in[1]) begin
-            uo_out <= uio_in;
+            count <= uio_in;
         end else if (ui_in[0]) begin
-            uo_out <= uo_out + 1;
+            count <= count + 1;
         end
     end
 
