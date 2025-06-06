@@ -28,11 +28,11 @@ module tt_um_programmable_counter (
     // Asynchronous reset
     always @(posedge clk or posedge rst_n) begin
         if (rst_n) begin
-            assign uo_out = 8'b0;
+            uo_out <= 8'b0;
         end else if (ui_in[1]) begin
-            assign uo_out = uio_in;
+            uo_out <= uio_in;
         end else if (ui_in[0]) begin
-            assign uo_out = uo_out + 1;
+            uo_out <= uo_out + 1;
         end
     end
 
